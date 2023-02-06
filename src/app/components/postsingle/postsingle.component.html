@@ -1,0 +1,44 @@
+<div class="content-wrapper mt-5 pt-2 single-page">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <a (click)="backBtn()" class="text-primary" style="cursor: pointer;">Go Back</a><br /><br />
+            <div class="border p-3 bg-white shadow-sm">
+                <h6 class="border-bottom border-dark pb-2">{{ single.item.Name }}, {{ single.item.District }}</h6>
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td>Post Office:</td>
+                            <td>{{ single.item.Name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Post Office Type:</td>
+                            <td>{{ single.item.BranchType }}</td>
+                        </tr>
+                        <tr>
+                            <td>District:</td>
+                            <td>{{ single.item.District }}</td>
+                        </tr>
+                        <tr>
+                            <td>State:</td>
+                            <td>{{ single.item.State }}</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Status:</td>
+                            <td>{{ single.item.DeliveryStatus }}</td>
+                        </tr>
+                        <tr>
+                            <td>PIN Code:</td>
+                            <td>{{ single.item.Pincode }}</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>Postmaster, Post Office ({{ single.item.BranchType }}), {{ single.item.District }},
+                                 {{ single.item.State }}, {{ single.item.Country }}, Pin Code: {{ single.item.Pincode }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

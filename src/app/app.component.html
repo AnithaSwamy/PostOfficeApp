@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bolder" href="#">
+            <img src="https://zerocreativity0.files.wordpress.com/2016/03/india-post-new-logo.png?w=640" alt="" width=""
+                height="30" class="d-inline-block align-text-top">
+            INDIA POST
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarNav">
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/post/id">Search By Pincode</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  routerLinkActive="active" routerLink="/post/location">Search By Office</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

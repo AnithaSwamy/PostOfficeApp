@@ -1,0 +1,18 @@
+<table class="table" *ngIf="poDetails">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Branch Name</th>
+            <th scope="col">Branch Type</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of poDetails; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.BranchType }}</td>
+            <td (click)="navigate(item)"><a class="text-primary" style="cursor: pointer;"><i class="fa fa-external-link"></i></a></td>
+        </tr>
+    </tbody>
+</table>
