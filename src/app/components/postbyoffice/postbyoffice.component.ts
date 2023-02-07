@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PincodeService } from '../../services/pincode.service';
 import { PostOfficeDetails } from '../../shared/postoffice';
 
@@ -17,7 +18,7 @@ export class PostbyofficeComponent implements OnInit {
     pinLocation: '',
   }
 
-  constructor(private service: PincodeService) { }
+  constructor(private service: PincodeService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -32,6 +33,7 @@ export class PostbyofficeComponent implements OnInit {
         console.log(this.postOfficeData);
       }, (error: any) => {
         console.log(error);
+        if (error.status == 0) { this.router.navigate(['/network-error']); }
       });
   }
 

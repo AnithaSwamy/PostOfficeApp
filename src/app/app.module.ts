@@ -9,8 +9,11 @@ import { PostbyidComponent } from './components/postbyid/postbyid.component';
 import { PostbyofficeComponent } from './components/postbyoffice/postbyoffice.component';
 import { PostdetailsComponent } from './components/postdetails/postdetails.component';
 import { PostsingleComponent } from './components/postsingle/postsingle.component';
+import { NetworkerrorComponent } from './components/networkerror/networkerror.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 import { PincodeService } from './services/pincode.service';
+import { AuthGuard } from './auth/auth.guard'
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { PincodeService } from './services/pincode.service';
     PostbyidComponent,
     PostbyofficeComponent,
     PostdetailsComponent,
-    PostsingleComponent
+    PostsingleComponent,
+    NetworkerrorComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { PincodeService } from './services/pincode.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PincodeService],
+  providers: [PincodeService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

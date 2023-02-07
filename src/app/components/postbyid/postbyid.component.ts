@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PincodeService } from '../../services/pincode.service';
 import { PostOfficeDetails } from '../../shared/postoffice';
 
@@ -12,15 +13,15 @@ export class PostbyidComponent implements OnInit {
 
   postOfficeData!: PostOfficeDetails[];
   status!: any;
+  single: any;
 
   postOffice: any = {
     pinCode: '',
   }
 
-  constructor(private service: PincodeService) { }
+  constructor(private service: PincodeService, private router: Router) { }
 
   ngOnInit(): void {
-
   }
 
   onSubmit() {
@@ -30,9 +31,9 @@ export class PostbyidComponent implements OnInit {
         this.status = response[0].Status;
         this.postOfficeData = response[0].PostOffice;
         console.log(this.postOfficeData);
-        console.log(this.status);
       }, (error: any) => {
         console.log(error);
+        if (error.status == 0) { this.router.navigate(['/network-error']); }
       });
   }
 
